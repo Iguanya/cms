@@ -1,0 +1,201 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Environmental & Nature Complaint Management System</title>
+  <link rel="stylesheet" href="{% static 'assets/vendors/simple-line-icons/css/simple-line-icons.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/vendors/css/vendor.bundle.base.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+  <style>
+    body {
+      background-color: #f8fdf8;
+      font-family: 'Roboto', sans-serif;
+    }
+    nav {
+      background-color: #ffffffb0;
+      backdrop-filter: blur(5px);
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+    nav .brand {
+      font-weight: 700;
+      color: #198754;
+      font-size: 1.2rem;
+      text-decoration: none;
+    }
+    nav .links a {
+      color: #198754;
+      margin-left: 20px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    nav .links a:hover {
+      color: #145c32;
+    }
+
+    header {
+      padding: 100px 20px 60px;
+      text-align: center;
+      background: linear-gradient(135deg, #e8f9e9, #f3fff3);
+      border-bottom: 3px solid #28a74520;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #198754;
+      margin-bottom: 15px;
+    }
+    header p {
+      color: #6c757d;
+      font-size: 1.1rem;
+      max-width: 650px;
+      margin: 0 auto 25px;
+    }
+    .btn-main {
+      background-color: #198754;
+      color: #fff;
+      padding: 14px 32px;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      margin: 10px;
+      display: inline-block;
+    }
+    .btn-main:hover {
+      background-color: #146c43;
+      color: #fff;
+      transform: translateY(-2px);
+    }
+    .btn-outline {
+      border: 2px solid #198754;
+      background-color: transparent;
+      color: #198754;
+    }
+    .btn-outline:hover {
+      background-color: #198754;
+      color: #fff;
+    }
+
+    .feature-card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      padding: 40px 20px;
+      transition: all 0.3s ease;
+    }
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+    .feature-icon {
+      font-size: 48px;
+      color: #198754;
+      margin-bottom: 15px;
+    }
+    .feature-title {
+      color: #198754;
+      font-weight: 600;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+    .feature-text {
+      color: #6c757d;
+      font-size: 0.95rem;
+    }
+    .about {
+      max-width: 800px;
+      margin: 80px auto;
+      text-align: center;
+    }
+    .about h3 {
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 15px;
+    }
+    .about p {
+      color: #6c757d;
+    }
+    footer {
+      background-color: #f1fdf3;
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 0.9rem;
+      color: #6c757d;
+      border-top: 2px solid #28a74510;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <a href="/" class="brand">CMS Portal</a>
+    <div class="links">
+      <a href="{% url 'login' %}"><i class="icon-user"></i> Citizen Login</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header>
+    <h1>Environmental & Nature Complaint Management System</h1>
+    <p>Empowering citizens to protect our environment by reporting issues that threaten nature’s balance.</p>
+    <div>
+      <a href="#" class="btn-main">Report an Incident</a>
+      <a href="{% url 'login' %}" class="btn-main btn-outline">Get Started</a>
+    </div>
+  </header>
+
+  <!-- Features -->
+  <main class="container mt-5">
+    <div class="row text-center">
+      <div class="col-md-4 mb-4">
+        <div class="feature-card">
+          <i class="icon-energy feature-icon"></i>
+          <div class="feature-title">Protect Nature</div>
+          <div class="feature-text">
+            Report illegal logging, land encroachment, or destruction of natural habitats.
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="feature-card">
+          <i class="icon-drop feature-icon"></i>
+          <div class="feature-title">Control Pollution</div>
+          <div class="feature-text">
+            Help identify pollution sources in your area — air, water, or soil.
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="feature-card">
+          <i class="icon-people feature-icon"></i>
+          <div class="feature-title">Community Action</div>
+          <div class="feature-text">
+            Join others in building a safer, cleaner, and sustainable environment.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="about">
+      <h3>Why We Exist</h3>
+      <p>
+        The Complaint Management System provides a transparent and efficient way for the public to report environmental
+        issues to the right authorities. By encouraging participation and accountability, we promote real change for our planet’s future.
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    &copy; {{ year|default:2025 }} Environmental & Nature Complaint Management System. All rights reserved.
+  </footer>
+</body>
+</html>

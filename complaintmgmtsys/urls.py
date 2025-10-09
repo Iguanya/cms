@@ -8,7 +8,8 @@ from .import views, adminviews, userviews
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('base/', views.BASE, name='base'),
-    path('', views.LOGIN, name='login'),
+    path('', views.landing, name='index'),
+    path('login', views.LOGIN, name='login'),
     path('doLogin', views.doLogin, name='doLogin'),
     path('doLogout', views.doLogout, name='logout'),
 

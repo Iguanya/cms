@@ -12,7 +12,8 @@ def BASE(request):
        return render(request,'base.html')
 
 
-
+def landing(request):
+    return render(request, 'index.html')
 
 def LOGIN(request):
     return render(request,'login.html')
